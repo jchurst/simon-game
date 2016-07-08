@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>SIMON Game - Free Code Camp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+<div class="row">
+
+<div class="col-lg-12 text-center headtop">
+<h2 align="center">SIMON</h2>
+</div>
+
+<div class="col-sm-6 col-sm-offset-3 text-center">
+
+<div id="holder" class="text-center">
+
+<div class="text-center" id="simon">
+
+<div id="game" class="text-center simon-game" ng-app="simonGame" ng-controller="SimonController as game" ng-class="{on: game.getPowerState(), strict: game.getStrictState()}">
+
+<div id="controls" class="text-center center-controls">
+
+<div id="btn-row0">
+<div id="score-counter" class="text-center control">
+<p class="text-center control" id="score-display" ng-bind="game.getCountText()"></p>
+</div>
+</div>
+
+<div id="btn-row1">
+<div id="start-holder" class="control">
+<button class="start-button" ng-click="game.start()"></button>
+<div id="start-label">START</div>
+</div>
+<div id="strict-holder" class="control">
+<button id="strict-btn" class="strict-toggler" ng-click="game.toggleStrict()"></button>
+<div id="strict-label">STRICT</div>
+<div class="strict-indicator"></div>
+</div>
+
+</div>
+
+<div id="btn-row2" class="control on-off">
+<div id="power-btnoff"><p>OFF</p></div>
+<div ng-click="game.togglePower()" class="on-off-wrapper">
+<button ng-class="{on: game.getPowerState()}" class="on-off"></button>
+</div>
+<div id="power-btnon"><p>ON</p></div>
+</div>
+
+</div>
+
+<div id="leftsqr">
+<button class="top-left square" ng-mousedown="game.pressColor(0)" ng-class="{lit: game.buttons[0].lit}">
+</button>
+  
+<button class="bottom-left square" ng-mousedown="game.pressColor(3)" ng-class="{lit: game.buttons[3].lit}">
+</button>
+</div>
+
+<div id="rightsqr">
+<button class="top-right square" ng-mousedown="game.pressColor(1)" ng-class="{lit: game.buttons[1].lit}">
+</button>
+
+<button class="bottom-right square" ng-mousedown="game.pressColor(2)" ng-class="{lit: game.buttons[2].lit}">
+</button>
+   
+</div>
+      
+</div>
+      
+</div>
+            
+</div>
+</div>
+</div>      
+</div>
+<div class="btn-images">
+<img src="http://www.hurstcreative.com/codepen/simon/img/green02.png" alt=""/>
+<img src="http://www.hurstcreative.com/codepen/simon/img/red02.png" alt=""/>
+<img src="http://www.hurstcreative.com/codepen/simon/img/yellow02.png" alt=""/>
+<img src="http://www.hurstcreative.com/codepen/simon/img/blue02.png" alt=""/>
+<img src="http://www.hurstcreative.com/codepen/simon/img/btn-yellow02.png" alt=""/>
+<img src="http://www.hurstcreative.com/codepen/simon/img/btn-red02.png" alt=""/>
+</div>
+    
+<script src="js/app.js"></script>
+
+</body>
+</html>
