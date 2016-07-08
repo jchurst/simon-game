@@ -1,0 +1,288 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: bold 14px Arial, sans-serif;
+}
+body {
+	height: 100%;
+	background: white;
+	background: radial-gradient(circle, #fff 20%, #ddd);
+}
+.container {
+	text-align:center;
+}
+.headtop {
+	margin-top: 50px;
+	background: transparent;
+}
+h2 {
+	display:block;
+	font-family: 'Helvetica';
+	text-transform:uppercase;
+	letter-spacing: 2px;
+    font-size: 30px;
+	line-height:25px;
+	margin:0 auto 15px auto;
+	font-weight:normal;
+	color:#fff;
+	text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+#message {
+	color:#6b0b16;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:20px;
+	letter-spacing:2px;
+	text-shadow:0 3px 4px rgba(46, 46, 46, .3);
+}
+
+.fade {
+   opacity: 1;
+   transition: opacity .5s ease-in-out;
+   -moz-transition: opacity .5s ease-in-out;
+   -webkit-transition: opacity .5s ease-in-out
+}
+.fade:hover {
+   opacity: 0.5
+}
+#holder {
+	text-align:center;
+	margin:30px auto;
+}
+#simon {
+	display: inline-block;
+    max-width: 520px;
+	width:auto;
+	margin:0 auto;
+}
+#game {
+	position:relative;
+	width:520px;
+	height:520px;
+	background-color:#000;
+	border-color: #333;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+	box-shadow: 5px 15px 10px rgba(0, 0, 0, 0.2);
+}
+.square {
+	width:250px;
+}
+.square img {
+	width:250px;
+	cursor:pointer;
+}
+#leftsqr {
+	width:250px;
+	float:left;
+}
+#rightsqr {
+	width:250px;
+	float:right;
+}
+#controls {
+	top:47%;
+	left:50%;
+	width:140px;
+	height:140px;
+	z-index:50000;
+	-webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position:absolute;
+}
+#btn-row0 {
+	width:120px;
+	height:40px;
+	margin:50px auto 0 auto;
+}
+#score-counter {
+	width:80px;
+	height:49px;
+	background-image:url(http://www.hurstcreative.com/codepen/simon/img/00.png);
+	background-size:contain;
+	margin:0 auto;
+}
+#score-display {
+	font-family:'orbitron';
+	font-size:25px;
+	color: red;
+	padding-top:15px;
+}
+
+#btn-row1 {
+	width:120px;
+	height:20px;
+	margin:15px auto 0 auto;
+}
+#btn-row2 {
+	width:120px;
+	height:20px;
+	margin:20px auto 0 auto;
+}
+#start-holder {
+	width:50px;
+	height:35px;
+	float:left;
+}
+button.start-button {
+	width:50px;
+	height:20px;
+	text-align:center;
+	background-image:url(http://www.hurstcreative.com/codepen/simon/img/btn-red01.png);
+	background-size:contain;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+button.start-button:hover {
+    background-image:url(http://www.hurstcreative.com/codepen/simon/img/btn-red02.png);
+}
+#start-label {
+	width:50px;
+	height:15px;
+	font-size:11px;
+	text-align:center;
+}
+#strict-holder {
+	width:50px;
+	height:35px;
+	float:right;
+}
+button#strict-btn {
+	width:50px;
+	height:20px;
+	text-align:center;
+	background-image:url(http://www.hurstcreative.com/codepen/simon/img/btn-yellow01.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.strict-indicator {
+  position: relative;
+  left: 30px;
+  top: -45px;
+  background: #000;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  visibility:hidden;
+}
+
+.simon-game.strict .strict-indicator {
+  background-color: black;
+}
+.simon-game.strict button#strict-btn {
+  background-image:url(http://www.hurstcreative.com/codepen/simon/img/btn-yellow02.png);
+}
+#strict-label {
+	width:50px;
+	height:15px;
+	font-size:11px;
+	text-align:center;
+}
+
+#power-btnoff {
+	float:left;
+	height:20px;
+	width:25px;
+}
+#power-btnoff p {
+	font-size:9px;
+	margin-top:5px;
+}
+.on-off-wrapper {
+	display: inline-block;
+    position: relative;
+	width:70px;
+	height:20px;
+	float:left;
+}
+button.on-off {
+	position: absolute;
+    display: inline-block;
+    top: 0px;
+    left: 0px;
+	height:20px;
+	width:57px;
+	background-image:url(http://www.hurstcreative.com/codepen/simon/img/btn-power.png);
+	background-size:contain;
+	transition: left 0.1s;
+}
+.on-off button.on {
+  left: 18px;
+}
+
+#power-btnon {
+	float:right;
+	height:20px;
+	width:20px;
+}
+#power-btnon p {
+	font-size:9px;
+	margin-top:5px;
+}
+button {
+	border:none;
+	background-color:transparent;
+	outline:none;
+}
+
+button.top-left {
+	width:250px;
+	height:250px;
+	float:left;
+	background-image:url(http://www.hurstcreative.com/codepen/simon/img/green01.png);
+	background-position:bottom right;
+	background-size:contain;
+	border:none;
+	outline:none;
+}
+.simon-game.on button.top-left.lit {
+  background-image:url(http://www.hurstcreative.com/codepen/simon/img/green02.png);
+}
+button.top-right {
+	width:250px;
+	height:250px;
+	float:right;
+	background-image:url(http://www.hurstcreative.com/codepen/simon/img/red01.png);
+	background-position:bottom left;
+	background-size:contain;
+	border:none;
+	outline:none;
+}
+.simon-game.on button.top-right.lit {
+  background-image:url(http://www.hurstcreative.com/codepen/simon/img/red02.png);
+}
+button.bottom-left {
+	width:250px;
+	height:250px;
+	float:left;
+	background-image:url(http://www.hurstcreative.com/codepen/simon/img/yellow01.png);
+	background-position:top right;
+	background-size:contain;
+	border:none;
+	outline:none;
+}
+.simon-game.on button.bottom-left.lit {
+  background-image:url(http://www.hurstcreative.com/codepen/simon/img/yellow02.png);
+}
+button.bottom-right {
+	width:250px;
+	height:250px;
+	float:right;
+	background-image:url(http://www.hurstcreative.com/codepen/simon/img/blue01.png);
+	background-position:top left;
+	background-size:contain;
+	border:none;
+	outline:none;
+}
+.simon-game.on button.bottom-right.lit {
+    background-image:url(http://www.hurstcreative.com/codepen/simon/img/blue02.png);
+}
+.btn-images {
+	height:100px;
+	visibility:hidden;
+}
